@@ -1,0 +1,1 @@
+Letakkan foto gedung RSUD resmi di folder ini dengan nama rsud-building.jpg agar tampil pada bagian hero.

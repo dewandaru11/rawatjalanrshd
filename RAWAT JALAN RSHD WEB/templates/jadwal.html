@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-banner"><div class="container"><p class="eyebrow">Rencanakan Kunjungan</p><h1>Jadwal Dokter</h1><p>Jadwal pada halaman ini masih data contoh dan harus diperbarui oleh admin.</p></div></section>
+<section class="container content-section">
+  <div class="search-row"><input id="filterInput" type="search" placeholder="Cari dokter atau poliklinik..." aria-label="Cari jadwal"></div>
+  <div class="table-wrap"><table id="dataTable"><thead><tr><th>Poliklinik</th><th>Nama Dokter</th><th>Hari dan Jam</th><th>Status</th></tr></thead><tbody>
+  {% for item in poli %}<tr><td>{{ item.nama }}</td><td>{{ item.dokter }}</td><td>{{ item.jadwal }}</td><td><span class="status-pill">Perlu konfirmasi</span></td></tr>{% endfor %}
+  </tbody></table></div>
+</section>
+{% endblock %}
