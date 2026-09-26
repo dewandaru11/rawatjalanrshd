@@ -1,357 +1,575 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
+
 <head>
-    <meta charset="UTF-8">
+  <meta charset="utf-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta
-        name="description"
-        content="Layanan Rawat Jalan RSUD H. Damanhuri Barabai"
-    >
+  <meta name="description"
+        content="Informasi layanan rawat jalan RSUD H. Damanhuri Barabai">
 
-    <meta
-        name="theme-color"
-        content="#0b5ea8"
-    >
+  <meta name="theme-color" content="#087f73">
 
-    <title>
-        {% block title %}
-        Rawat Jalan - RSUD H. Damanhuri Barabai
-        {% endblock %}
-    </title>
+  <title>{{ title }} | RSHD Rawat Jalan</title>
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
+  <script defer
+          src="{{ url_for('static', filename='js/main.js') }}">
+  </script>
 
-    <!-- Icon -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
+  <!-- =====================================================
+       STYLE LOGO
+       ===================================================== -->
+  <style>
 
-    <!-- CSS -->
-    <link
-        rel="stylesheet"
-        href="{{ url_for('static', filename='css/style.css') }}"
-    >
+    /* ===============================
+       BRAND / LOGO
+       =============================== */
 
-    {% block head %}{% endblock %}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 145px;
+    }
+
+    .brand-logo img {
+      display: block;
+      width: 145px;
+      height: auto;
+      max-height: 70px;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .brand-text strong {
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .brand-text small {
+      font-size: 12px;
+      opacity: .85;
+      margin-top: 3px;
+    }
+
+
+    /* ===============================
+       FOOTER LOGO
+       =============================== */
+
+    .brand-light .brand-logo img {
+      max-height: 65px;
+    }
+
+
+    /* ===============================
+       JADWAL HARI INI
+       =============================== */
+
+    .main-nav a.external-jadwal {
+      white-space: nowrap;
+    }
+
+
+    /* ===============================
+       RESPONSIVE
+       =============================== */
+
+    @media (max-width: 900px) {
+
+      .brand-logo {
+        width: 120px;
+      }
+
+      .brand-logo img {
+        width: 120px;
+        max-height: 60px;
+      }
+
+      .brand-text strong {
+        font-size: 18px;
+      }
+
+      .brand-text small {
+        font-size: 11px;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .brand {
+        gap: 7px;
+      }
+
+      .brand-logo {
+        width: 100px;
+      }
+
+      .brand-logo img {
+        width: 100px;
+        max-height: 52px;
+      }
+
+      .brand-text {
+        display: none;
+      }
+
+    }
+
+  </style>
+
 </head>
+
 
 <body>
 
-    <!-- =====================================================
-         HEADER
-    ====================================================== -->
 
-    <header class="site-header" id="siteHeader">
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
 
-        <div class="container header-container">
+<header class="site-header">
 
-            <!-- BRAND -->
-            <a href="/" class="brand">
+  <div class="container nav-wrap">
 
-                <div class="brand-logo">
-                    <img
-                        src="{{ url_for('static', filename='img/logo.png') }}"
-                        alt="Logo RSUD H. Damanhuri Barabai"
-                    >
-                </div>
 
-                <div class="brand-text">
-                    <span class="brand-title">
-                        RSUD H. Damanhuri
-                    </span>
+    <!-- =================================================
+         LOGO / BRAND
+         ================================================= -->
 
-                    <span class="brand-location">
-                        Barabai
-                    </span>
-                </div>
+    <a class="brand"
+       href="{{ url_for('beranda') }}"
+       aria-label="RSHD Beranda">
 
-            </a>
 
+      <!-- LOGO RSUD -->
+      <span class="brand-logo">
 
-            <!-- DESKTOP NAVIGATION -->
+        <img
+          src="{{ url_for('static', filename='img/logo-rshd-cropped.png') }}"
+          alt="Logo RSUD H. Damanhuri Barabai">
 
-            <nav class="desktop-nav">
+      </span>
 
-                <a href="/" class="nav-link">
-                    Beranda
-                </a>
 
-                <a href="#layanan" class="nav-link">
-                    Layanan
-                </a>
+      <!-- NAMA RS -->
+      <span class="brand-text">
 
-                <a href="#poliklinik" class="nav-link">
-                    Poliklinik
-                </a>
+        <strong>
+          RSHD
+        </strong>
 
-                <a href="#jadwal" class="nav-link">
-                    Jadwal Dokter
-                </a>
+        <small>
+          RSUD H. Damanhuri Barabai
+        </small>
 
-                <a href="#alur" class="nav-link">
-                    Alur Pelayanan
-                </a>
+      </span>
 
-                <a href="#kontak" class="nav-link">
-                    Kontak
-                </a>
 
-                <a href="#daftar" class="nav-button">
-                    <i class="fa-solid fa-calendar-check"></i>
-                    Daftar Online
-                </a>
+    </a>
 
-            </nav>
 
+    <!-- =================================================
+         MENU MOBILE
+         ================================================= -->
 
-            <!-- MOBILE BUTTON -->
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Buka menu"
+      aria-expanded="false">
 
-            <button
-                class="mobile-menu-button"
-                id="mobileMenuButton"
-                aria-label="Buka menu"
-                type="button"
-            >
-                <i class="fa-solid fa-bars"></i>
-            </button>
+      ☰
 
-        </div>
+    </button>
 
 
-        <!-- MOBILE NAVIGATION -->
+    <!-- =================================================
+         NAVIGASI
+         ================================================= -->
 
-        <nav class="mobile-nav" id="mobileNav">
+    <nav class="main-nav" aria-label="Navigasi utama">
 
-            <a href="/">
-                <i class="fa-solid fa-house"></i>
-                Beranda
-            </a>
 
-            <a href="#layanan">
-                <i class="fa-solid fa-stethoscope"></i>
-                Layanan
-            </a>
+      <!-- BERANDA -->
 
-            <a href="#poliklinik">
-                <i class="fa-solid fa-hospital"></i>
-                Poliklinik
-            </a>
+      <a href="{{ url_for('beranda') }}"
+         class="{{ 'active' if request.endpoint == 'beranda' else '' }}">
 
-            <a href="#jadwal">
-                <i class="fa-solid fa-user-doctor"></i>
-                Jadwal Dokter
-            </a>
+        Beranda
 
-            <a href="#alur">
-                <i class="fa-solid fa-route"></i>
-                Alur Pelayanan
-            </a>
+      </a>
 
-            <a href="#kontak">
-                <i class="fa-solid fa-phone"></i>
-                Kontak
-            </a>
 
-            <a href="#daftar" class="mobile-register">
-                <i class="fa-solid fa-calendar-check"></i>
-                Daftar Online
-            </a>
+      <!-- INFORMASI -->
 
-        </nav>
+      <a href="{{ url_for('informasi') }}"
+         class="{{ 'active' if request.endpoint == 'informasi' else '' }}">
 
-    </header>
+        Informasi
 
+      </a>
 
-    <!-- =====================================================
-         MAIN
-    ====================================================== -->
 
-    <main>
+      <!-- POLIKLINIK -->
 
-        {% block content %}{% endblock %}
+      <a href="{{ url_for('poliklinik') }}"
+         class="{{ 'active' if request.endpoint == 'poliklinik' else '' }}">
 
-    </main>
+        Poliklinik
 
+      </a>
 
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
 
-    <footer class="site-footer">
+      <!-- =================================================
+           JADWAL HARI INI
+           ================================================= -->
 
-        <div class="container">
+      <a
+        class="external-jadwal"
+        href="https://simrs.rshdbarabai.com/anjungan/jadwaldokterpoli"
+        target="_blank"
+        rel="noopener noreferrer">
 
-            <div class="footer-grid">
+        Jadwal Hari Ini
 
-                <!-- BRAND FOOTER -->
+      </a>
 
-                <div class="footer-brand">
 
-                    <div class="footer-brand-top">
+      <!-- ALUR PELAYANAN -->
 
-                        <div class="footer-logo">
+      <a href="{{ url_for('alur_pelayanan') }}"
+         class="{{ 'active' if request.endpoint == 'alur_pelayanan' else '' }}">
 
-                            <img
-                                src="{{ url_for('static', filename='img/logo.png') }}"
-                                alt="Logo RSUD H. Damanhuri Barabai"
-                            >
+        Alur Pelayanan
 
-                        </div>
+      </a>
 
-                        <div>
-                            <h3>
-                                RSUD H. Damanhuri
-                            </h3>
 
-                            <p>
-                                Barabai
-                            </p>
-                        </div>
+      <!-- KONTAK -->
 
-                    </div>
+      <a href="{{ url_for('kontak') }}"
+         class="{{ 'active' if request.endpoint == 'kontak' else '' }}">
 
-                    <p class="footer-description">
-                        Portal informasi dan layanan
-                        Rawat Jalan RSUD H. Damanhuri Barabai.
-                    </p>
+        Kontak
 
-                </div>
+      </a>
 
 
-                <!-- LAYANAN -->
+    </nav>
 
-                <div class="footer-column">
 
-                    <h4>
-                        Layanan
-                    </h4>
+    <!-- =================================================
+         TOMBOL HEADER
+         ================================================= -->
 
-                    <a href="#poliklinik">
-                        Poliklinik
-                    </a>
+    <div class="nav-actions">
 
-                    <a href="#jadwal">
-                        Jadwal Dokter
-                    </a>
 
-                    <a href="#alur">
-                        Alur Pelayanan
-                    </a>
+      <!-- LOGIN -->
 
-                    <a href="#daftar">
-                        Pendaftaran Online
-                    </a>
+      <a class="btn btn-outline btn-small"
+         href="{{ url_for('login') }}">
 
-                </div>
+        Login
 
+      </a>
 
-                <!-- INFORMASI -->
 
-                <div class="footer-column">
+      <!-- DAFTAR ONLINE -->
 
-                    <h4>
-                        Informasi
-                    </h4>
+      <a class="btn btn-primary btn-small"
+         href="{{ url_for('daftar_online') }}">
 
-                    <a href="#layanan">
-                        Layanan Rawat Jalan
-                    </a>
+        Daftar Online
 
-                    <a href="#jadwal">
-                        Jadwal Pelayanan
-                    </a>
+      </a>
 
-                    <a href="#kontak">
-                        Informasi Kontak
-                    </a>
 
-                </div>
+    </div>
 
 
-                <!-- KONTAK -->
+  </div>
 
-                <div class="footer-column footer-contact">
+</header>
 
-                    <h4>
-                        Hubungi Kami
-                    </h4>
 
-                    <div class="contact-item">
 
-                        <i class="fa-solid fa-location-dot"></i>
+<!-- =====================================================
+     MAIN CONTENT
+     ===================================================== -->
 
-                        <span>
-                            RSUD H. Damanhuri Barabai
-                        </span>
+<main>
 
-                    </div>
 
-                    <div class="contact-item">
+  <!-- =================================================
+       FLASH MESSAGE
+       ================================================= -->
 
-                        <i class="fa-solid fa-phone"></i>
+  {% with messages = get_flashed_messages(with_categories=true) %}
 
-                        <span>
-                            Informasi Rawat Jalan
-                        </span>
+    {% if messages %}
 
-                    </div>
+      <div class="container flash-wrap">
 
-                    <div class="contact-item">
+        {% for category, message in messages %}
 
-                        <i class="fa-solid fa-clock"></i>
+          <div class="flash {{ category }}">
 
-                        <span>
-                            Senin - Sabtu
-                        </span>
+            {{ message }}
 
-                    </div>
+          </div>
 
-                </div>
+        {% endfor %}
 
-            </div>
+      </div>
 
+    {% endif %}
 
-            <!-- FOOTER BOTTOM -->
+  {% endwith %}
 
-            <div class="footer-bottom">
 
-                <p>
-                    © <span id="currentYear"></span>
-                    RSUD H. Damanhuri Barabai.
-                    Semua hak dilindungi.
-                </p>
+  <!-- =================================================
+       ISI HALAMAN
+       ================================================= -->
 
-                <p class="footer-small">
-                    Layanan Rawat Jalan
-                </p>
+  {% block content %}{% endblock %}
 
-            </div>
 
-        </div>
+</main>
 
-    </footer>
 
 
-    <!-- JAVASCRIPT -->
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
 
-    <script
-        src="{{ url_for('static', filename='js/app.js') }}"
-    ></script>
+<footer class="footer">
 
-    {% block scripts %}{% endblock %}
+
+  <div class="container footer-inner">
+
+
+    <!-- =================================================
+         BRAND FOOTER
+         ================================================= -->
+
+    <div class="footer-brand">
+
+
+      <a class="brand brand-light"
+         href="{{ url_for('beranda') }}">
+
+
+        <!-- LOGO FOOTER -->
+
+        <span class="brand-logo">
+
+          <img
+            src="{{ url_for('static', filename='img/logo-rshd-cropped.png') }}"
+            alt="Logo RSUD H. Damanhuri Barabai">
+
+        </span>
+
+
+        <!-- NAMA RS -->
+
+        <span class="brand-text">
+
+          <strong>
+            RSHD
+          </strong>
+
+          <small>
+            RSUD H. Damanhuri
+          </small>
+
+        </span>
+
+
+      </a>
+
+
+      <p>
+
+        Informasi layanan rawat jalan
+        RSUD H. Damanhuri Barabai.
+
+      </p>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         KONTAK
+         ================================================= -->
+
+    <div class="footer-contact">
+
+
+      <strong>
+        Kontak
+      </strong>
+
+
+      <span>
+        📍 Jl. Rumah Sakit,
+        Barabai, Kalimantan Selatan
+      </span>
+
+
+      <span>
+        ☎ (0517) XXX XXX
+      </span>
+
+
+      <span>
+        ✉ info@rsud-damanhuri.go.id
+      </span>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         LAYANAN
+         ================================================= -->
+
+    <div class="footer-links">
+
+
+      <strong>
+        Layanan
+      </strong>
+
+
+      <!-- POLIKLINIK -->
+
+      <a href="{{ url_for('poliklinik') }}">
+
+        Poliklinik
+
+      </a>
+
+
+      <!-- JADWAL HARI INI -->
+
+      <a
+        href="https://simrs.rshdbarabai.com/anjungan/jadwaldokterpoli"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        Jadwal Hari Ini
+
+      </a>
+
+
+      <!-- ALUR -->
+
+      <a href="{{ url_for('alur_pelayanan') }}">
+
+        Alur Pelayanan
+
+      </a>
+
+
+      <!-- DAFTAR ONLINE -->
+
+      <a href="{{ url_for('daftar_online') }}">
+
+        Daftar Online
+
+      </a>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         MEDIA SOSIAL
+         ================================================= -->
+
+    <div class="footer-social">
+
+
+      <strong>
+        Media Sosial
+      </strong>
+
+
+      <a
+        href="https://www.instagram.com/frontoffice.id?stkn=MWFjajZ0cTA3ZHdzbw=="
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-instagram">
+
+        <span aria-hidden="true">
+          ◎
+        </span>
+
+        Instagram
+
+      </a>
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- =================================================
+       FOOTER BOTTOM
+       ================================================= -->
+
+  <div class="footer-bottom">
+
+
+    <div class="container">
+
+
+      <small>
+
+        © 2026 RSHD Rawat Jalan.
+        BK Tech. Support : Adha H.Y
+
+      </small>
+
+
+    </div>
+
+
+  </div>
+
+
+</footer>
+
+
 
 </body>
+
 </html>
