@@ -470,20 +470,43 @@ textarea{
 .footer{
   background:#0c2d56;
   color:#fff;
-  padding:17px 0;
+  padding:42px 0 0;
 }
 
 .footer-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  flex-wrap:wrap;
+  width:min(1120px,92%);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1.15fr 1.55fr 1fr .8fr;
+  gap:38px;
+  align-items:start;
+  padding-bottom:34px;
 }
 
-.brand-light .brand-mark{
-  background:#fff;
-  color:#0c2d56;
+.footer-brand,
+.footer-contact,
+.footer-links,
+.footer-social{
+  min-width:0;
+}
+
+.footer-brand .brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:14px;
+}
+
+.footer-brand .brand-logo{
+  width:105px;
+  flex:0 0 105px;
+}
+
+.footer-brand .brand-logo img{
+  width:105px;
+  height:auto;
+  max-height:58px;
+  object-fit:contain;
 }
 
 .brand-light .brand-text strong,
@@ -491,16 +514,195 @@ textarea{
   color:#fff;
 }
 
+.footer-brand p{
+  margin:0;
+  max-width:300px;
+  color:#d7e4f3;
+  font-size:13px;
+  line-height:1.7;
+}
+
+/* JUDUL KOLOM */
+
+.footer-contact > strong,
+.footer-links > strong,
+.footer-social > strong{
+  display:block;
+  margin:0 0 14px;
+  color:#fff;
+  font-size:14px;
+  font-weight:700;
+}
+
+/* KONTAK */
+
 .footer-contact{
   display:flex;
-  gap:20px;
-  flex-wrap:wrap;
+  flex-direction:column;
+  gap:11px;
+  font-size:12px;
+  line-height:1.6;
+}
+
+.footer-contact > span{
+  display:block;
+  color:#d7e4f3;
+  overflow-wrap:anywhere;
+}
+
+.footer-contact a{
+  color:#fff;
+}
+
+.footer-contact a:hover{
+  text-decoration:underline;
+}
+
+/* TOMBOL / LINK WHATSAPP */
+
+.footer-contact span a[href*="wa.me"]{
+  display:inline-flex !important;
+  align-items:center;
+  gap:9px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.footer-contact span a[href*="wa.me"] > span{
+  flex:0 0 30px;
+  width:30px;
+  height:30px;
+  display:inline-flex !important;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#25D366;
+  color:#fff;
+  font-size:16px;
+  line-height:1;
+}
+
+/* LAYANAN */
+
+.footer-links{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:9px;
+}
+
+.footer-links a{
+  display:block;
+  color:#d7e4f3;
+  font-size:12px;
+  line-height:1.5;
+  transition:.2s ease;
+}
+
+.footer-links a:hover{
+  color:#fff;
+  transform:translateX(2px);
+}
+
+/* MEDIA SOSIAL */
+
+.footer-social{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:9px;
+}
+
+.footer-social a{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:#d7e4f3;
   font-size:12px;
 }
 
-.footer-inner>small{
+.footer-social a:hover{
+  color:#fff;
+}
+
+.footer-social a span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:28px;
+  height:28px;
+  border-radius:8px;
+  background:rgba(255,255,255,.10);
+  color:#fff;
+}
+
+/* FOOTER BOTTOM */
+
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.12);
+  padding:17px 0;
+}
+
+.footer-bottom .container{
+  width:min(1120px,92%);
+  margin:0 auto;
+}
+
+.footer-bottom small{
+  display:block;
+  color:#b9cde3;
   font-size:11px;
-  color:#d7e4f3;
+  line-height:1.6;
+  text-align:center;
+}
+
+/* =========================
+   FOOTER RESPONSIVE
+   ========================= */
+
+@media (max-width:900px){
+  .footer-inner{
+    grid-template-columns:1fr 1fr;
+    gap:30px 26px;
+  }
+}
+
+@media (max-width:600px){
+  .footer{
+    padding:32px 0 0;
+  }
+
+  .footer-inner{
+    width:calc(100% - 30px);
+    grid-template-columns:1fr;
+    gap:25px;
+    padding-bottom:28px;
+  }
+
+  .footer-brand .brand-logo{
+    width:90px;
+    flex-basis:90px;
+  }
+
+  .footer-brand .brand-logo img{
+    width:90px;
+    max-height:52px;
+  }
+
+  .footer-brand p{
+    max-width:none;
+    font-size:12px;
+  }
+
+  .footer-contact{
+    gap:9px;
+    font-size:12px;
+  }
+
+  .footer-links,
+  .footer-social{
+    gap:8px;
+  }
 }
 
 /* =========================
