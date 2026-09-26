@@ -64,7 +64,10 @@ def login():
 
 @app.route("/health")
 def health():
-    return {"status": "ok", "app": "RSHD Rawat Jalan"}
+    return {
+    "status": "ok",
+    "app": "RSUD H. Damanhuri Barabai"
+}
 
 if __name__ == "__main__":
     app.run(debug=True)
