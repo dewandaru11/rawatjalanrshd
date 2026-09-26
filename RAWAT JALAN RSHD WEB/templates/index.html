@@ -1,676 +1,291 @@
 {% extends "base.html" %}
-
-{% block title %}
-Rawat Jalan | RSUD H. Damanhuri Barabai
-{% endblock %}
-
-
 {% block content %}
 
-<!-- =====================================================
-     HERO
-====================================================== -->
+<!-- HERO -->
+<section class="ro-hero">
+  <div class="ro-hero-glow ro-glow-1"></div>
+  <div class="ro-hero-glow ro-glow-2"></div>
 
-<section class="hero">
+  <div class="container ro-hero-grid">
+    <div class="ro-hero-copy">
+      <div class="ro-kicker">
+        <span class="ro-kicker-dot"></span>
+        INSTALASI RAWAT JALAN
+      </div>
 
-    <div class="container hero-container">
+      <h1>
+        Pelayanan Rawat Jalan
+        <span>Lebih Mudah & Terarah</span>
+      </h1>
 
-        <div class="hero-content">
+      <p class="ro-hero-text">
+        Akses informasi poliklinik, jadwal dokter, pendaftaran, dan alur
+        pelayanan rawat jalan RSHD dalam satu tempat.
+      </p>
 
-            <div class="hero-badge">
-                <span class="badge-dot"></span>
-                Layanan Rawat Jalan
-            </div>
+      <div class="ro-hero-actions">
+        <a class="ro-btn ro-btn-primary" href="{{ url_for('daftar_online') }}">
+          <span>Daftar Online</span>
+          <b>→</b>
+        </a>
 
-            <h1>
-                Pelayanan Kesehatan
-                <span>Lebih Mudah</span>
-                dan Terarah
-            </h1>
+        <a class="ro-btn ro-btn-light"
+           href="https://simrs.rshdbarabai.com/anjungan/jadwaldokterpoli"
+           target="_blank"
+           rel="noopener noreferrer">
+          Jadwal Dokter Hari Ini
+        </a>
+      </div>
 
-            <p>
-                Selamat datang di layanan Rawat Jalan
-                RSUD H. Damanhuri Barabai.
-                Dapatkan informasi pelayanan, jadwal dokter,
-                poliklinik, dan pendaftaran secara lebih mudah.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#daftar" class="button-primary">
-                    <i class="fa-solid fa-calendar-check"></i>
-                    Daftar Online
-                </a>
-
-                <a href="#layanan" class="button-secondary">
-                    Lihat Layanan
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
-
-            </div>
-
-
-            <div class="hero-information">
-
-                <div class="hero-info-item">
-
-                    <div class="hero-info-icon">
-                        <i class="fa-solid fa-hospital"></i>
-                    </div>
-
-                    <div>
-                        <strong>
-                            Pelayanan Terpadu
-                        </strong>
-
-                        <span>
-                            Informasi rawat jalan
-                        </span>
-                    </div>
-
-                </div>
-
-
-                <div class="hero-info-item">
-
-                    <div class="hero-info-icon">
-                        <i class="fa-solid fa-user-doctor"></i>
-                    </div>
-
-                    <div>
-                        <strong>
-                            Dokter Profesional
-                        </strong>
-
-                        <span>
-                            Jadwal dokter tersedia
-                        </span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- HERO CARD -->
-
-        <div class="hero-visual">
-
-            <div class="hero-card">
-
-                <div class="hero-card-header">
-
-                    <div class="hero-card-icon">
-                        <i class="fa-solid fa-heart-pulse"></i>
-                    </div>
-
-                    <div>
-                        <span>
-                            Informasi
-                        </span>
-
-                        <strong>
-                            Rawat Jalan
-                        </strong>
-                    </div>
-
-                </div>
-
-
-                <div class="hero-card-list">
-
-                    <div>
-                        <i class="fa-solid fa-check"></i>
-                        <span>Informasi Poliklinik</span>
-                    </div>
-
-                    <div>
-                        <i class="fa-solid fa-check"></i>
-                        <span>Jadwal Dokter</span>
-                    </div>
-
-                    <div>
-                        <i class="fa-solid fa-check"></i>
-                        <span>Alur Pelayanan</span>
-                    </div>
-
-                    <div>
-                        <i class="fa-solid fa-check"></i>
-                        <span>Pendaftaran Online</span>
-                    </div>
-
-                </div>
-
-                <div class="hero-card-footer">
-
-                    <i class="fa-solid fa-circle-info"></i>
-
-                    <span>
-                        Pastikan Anda mengetahui jadwal
-                        pelayanan sebelum berkunjung.
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
+      <div class="ro-trust">
+        <span class="ro-trust-check">✓</span>
+        <span>Informasi layanan rawat jalan RSHD</span>
+      </div>
     </div>
 
+    <div class="ro-hero-panel">
+      <div class="ro-panel-top">
+        <span class="ro-status"><i></i> Layanan Rawat Jalan</span>
+        <span class="ro-panel-label">RSHD</span>
+      </div>
+
+      <div class="ro-panel-main">
+        <div class="ro-panel-icon">✚</div>
+        <h2>Temukan Layanan Anda</h2>
+        <p>
+          Pilih kebutuhan Anda untuk mendapatkan informasi yang tepat.
+        </p>
+      </div>
+
+      <div class="ro-panel-links">
+        <a href="{{ url_for('poliklinik') }}">
+          <span>⌂</span>
+          <div>
+            <strong>Poliklinik</strong>
+            <small>Lihat layanan poli</small>
+          </div>
+          <b>›</b>
+        </a>
+
+        <a href="https://simrs.rshdbarabai.com/anjungan/jadwaldokterpoli"
+           target="_blank"
+           rel="noopener noreferrer">
+          <span>♙</span>
+          <div>
+            <strong>Jadwal Dokter</strong>
+            <small>Cek jadwal hari ini</small>
+          </div>
+          <b>›</b>
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
 
-
-
-<!-- =====================================================
-     LAYANAN
-====================================================== -->
-
-<section
-    class="section"
-    id="layanan"
->
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <div class="section-label">
-                LAYANAN
-            </div>
-
-            <h2>
-                Akses layanan dengan mudah
-            </h2>
-
-            <p>
-                Temukan informasi yang Anda butuhkan
-                sebelum mendapatkan pelayanan rawat jalan.
-            </p>
-
-        </div>
-
-
-        <div class="service-grid">
-
-            <a href="#poliklinik" class="service-card">
-
-                <div class="service-icon blue">
-                    <i class="fa-solid fa-hospital"></i>
-                </div>
-
-                <h3>
-                    Poliklinik
-                </h3>
-
-                <p>
-                    Informasi mengenai layanan
-                    poliklinik yang tersedia.
-                </p>
-
-                <span class="service-link">
-                    Lihat layanan
-                    <i class="fa-solid fa-arrow-right"></i>
-                </span>
-
-            </a>
-
-
-            <a href="#jadwal" class="service-card">
-
-                <div class="service-icon green">
-                    <i class="fa-solid fa-user-doctor"></i>
-                </div>
-
-                <h3>
-                    Jadwal Dokter
-                </h3>
-
-                <p>
-                    Lihat jadwal dokter dan
-                    pelayanan poliklinik.
-                </p>
-
-                <span class="service-link">
-                    Lihat jadwal
-                    <i class="fa-solid fa-arrow-right"></i>
-                </span>
-
-            </a>
-
-
-            <a href="#alur" class="service-card">
-
-                <div class="service-icon orange">
-                    <i class="fa-solid fa-route"></i>
-                </div>
-
-                <h3>
-                    Alur Pelayanan
-                </h3>
-
-                <p>
-                    Pelajari tahapan pelayanan
-                    rawat jalan.
-                </p>
-
-                <span class="service-link">
-                    Lihat alur
-                    <i class="fa-solid fa-arrow-right"></i>
-                </span>
-
-            </a>
-
-
-            <a href="#daftar" class="service-card">
-
-                <div class="service-icon purple">
-                    <i class="fa-solid fa-calendar-check"></i>
-                </div>
-
-                <h3>
-                    Daftar Online
-                </h3>
-
-                <p>
-                    Lakukan pendaftaran pelayanan
-                    secara online.
-                </p>
-
-                <span class="service-link">
-                    Daftar sekarang
-                    <i class="fa-solid fa-arrow-right"></i>
-                </span>
-
-            </a>
-
-        </div>
-
+<!-- QUICK ACCESS -->
+<section class="ro-section ro-quick">
+  <div class="container">
+    <div class="ro-section-head">
+      <div>
+        <span class="ro-overline">AKSES CEPAT</span>
+        <h2>Kebutuhan Rawat Jalan Anda</h2>
+      </div>
+      <p>
+        Informasi penting yang dapat diakses dengan cepat.
+      </p>
     </div>
 
+    <div class="ro-quick-grid">
+      <a class="ro-quick-card ro-blue" href="{{ url_for('daftar_online') }}">
+        <span class="ro-card-icon">↗</span>
+        <div>
+          <strong>Pendaftaran</strong>
+          <p>Daftar pelayanan rawat jalan secara online.</p>
+        </div>
+        <b>→</b>
+      </a>
+
+      <a class="ro-quick-card ro-purple"
+         href="https://simrs.rshdbarabai.com/anjungan/jadwaldokterpoli"
+         target="_blank"
+         rel="noopener noreferrer">
+        <span class="ro-card-icon">♙</span>
+        <div>
+          <strong>Jadwal Dokter Hari Ini</strong>
+          <p>Lihat dokter dan jadwal pelayanan poli.</p>
+        </div>
+        <b>→</b>
+      </a>
+
+      <a class="ro-quick-card ro-green" href="{{ url_for('poliklinik') }}">
+        <span class="ro-card-icon">⌂</span>
+        <div>
+          <strong>Poliklinik</strong>
+          <p>Kenali layanan dan poli yang tersedia.</p>
+        </div>
+        <b>→</b>
+      </a>
+
+      <a class="ro-quick-card ro-orange" href="{{ url_for('informasi') }}">
+        <span class="ro-card-icon">i</span>
+        <div>
+          <strong>Informasi</strong>
+          <p>Persyaratan dan informasi pelayanan.</p>
+        </div>
+        <b>→</b>
+      </a>
+    </div>
+  </div>
 </section>
 
-
-
-<!-- =====================================================
-     POLIKLINIK
-====================================================== -->
-
-<section
-    class="section section-light"
-    id="poliklinik"
->
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <div class="section-label">
-                POLIKLINIK
-            </div>
-
-            <h2>
-                Layanan Poliklinik
-            </h2>
-
-            <p>
-                Pilih layanan poliklinik sesuai
-                kebutuhan Anda.
-            </p>
-
-        </div>
-
-
-        <div class="clinic-grid">
-
-            <div class="clinic-card">
-                <i class="fa-solid fa-heart-pulse"></i>
-                <span>Poliklinik Jantung</span>
-            </div>
-
-            <div class="clinic-card">
-                <i class="fa-solid fa-brain"></i>
-                <span>Poliklinik Saraf</span>
-            </div>
-
-            <div class="clinic-card">
-                <i class="fa-solid fa-bone"></i>
-                <span>Poliklinik Orthopedi</span>
-            </div>
-
-            <div class="clinic-card">
-                <i class="fa-solid fa-child"></i>
-                <span>Poliklinik Anak</span>
-            </div>
-
-            <div class="clinic-card">
-                <i class="fa-solid fa-person"></i>
-                <span>Poliklinik Penyakit Dalam</span>
-            </div>
-
-            <div class="clinic-card">
-                <i class="fa-solid fa-tooth"></i>
-                <span>Poliklinik Gigi</span>
-            </div>
-
-        </div>
-
+<!-- SERVICE FLOW -->
+<section class="ro-section ro-flow-section">
+  <div class="container">
+    <div class="ro-section-head centered">
+      <span class="ro-overline">ALUR PELAYANAN</span>
+      <h2>Rawat Jalan dalam 4 Langkah</h2>
+      <p>Ikuti alur sederhana berikut untuk mempersiapkan kunjungan Anda.</p>
     </div>
 
+    <div class="ro-flow">
+      <article class="ro-step">
+        <span class="ro-step-no">01</span>
+        <div class="ro-step-icon">✓</div>
+        <h3>Daftar</h3>
+        <p>Lakukan pendaftaran sesuai kebutuhan pelayanan Anda.</p>
+      </article>
+
+      <div class="ro-flow-line"></div>
+
+      <article class="ro-step">
+        <span class="ro-step-no">02</span>
+        <div class="ro-step-icon">⌂</div>
+        <h3>Pilih Poli</h3>
+        <p>Kenali poliklinik dan layanan yang Anda perlukan.</p>
+      </article>
+
+      <div class="ro-flow-line"></div>
+
+      <article class="ro-step">
+        <span class="ro-step-no">03</span>
+        <div class="ro-step-icon">♙</div>
+        <h3>Cek Dokter</h3>
+        <p>Periksa jadwal dokter sebelum datang ke rumah sakit.</p>
+      </article>
+
+      <div class="ro-flow-line"></div>
+
+      <article class="ro-step">
+        <span class="ro-step-no">04</span>
+        <div class="ro-step-icon">♡</div>
+        <h3>Pemeriksaan</h3>
+        <p>Datang sesuai jadwal dan ikuti proses pelayanan.</p>
+      </article>
+    </div>
+  </div>
 </section>
 
-
-
-<!-- =====================================================
-     JADWAL
-====================================================== -->
-
-<section
-    class="section"
-    id="jadwal"
->
-
-    <div class="container">
-
-        <div class="schedule-box">
-
-            <div class="schedule-content">
-
-                <div class="section-label">
-                    JADWAL DOKTER
-                </div>
-
-                <h2>
-                    Cek jadwal pelayanan dokter
-                </h2>
-
-                <p>
-                    Pastikan jadwal dokter sebelum datang
-                    ke rumah sakit untuk mendapatkan
-                    pelayanan rawat jalan.
-                </p>
-
-                <a href="#" class="button-primary">
-                    <i class="fa-solid fa-calendar-days"></i>
-                    Lihat Jadwal
-                </a>
-
-            </div>
-
-
-            <div class="schedule-icon">
-
-                <i class="fa-solid fa-calendar-days"></i>
-
-            </div>
-
-        </div>
-
+<!-- POLI -->
+<section class="ro-section ro-poli-section">
+  <div class="container">
+    <div class="ro-section-head">
+      <div>
+        <span class="ro-overline">LAYANAN RAWAT JALAN</span>
+        <h2>Poliklinik</h2>
+      </div>
+      <a class="ro-text-link" href="{{ url_for('poliklinik') }}">
+        Lihat informasi poli <span>→</span>
+      </a>
     </div>
 
+    <div class="ro-poli-highlight">
+      <div class="ro-poli-art">
+        <span>✚</span>
+        <div></div>
+      </div>
+      <div class="ro-poli-copy">
+        <span class="ro-mini-label">PELAYANAN TERINTEGRASI</span>
+        <h3>Informasi poliklinik dalam satu akses</h3>
+        <p>
+          Temukan informasi layanan rawat jalan dan persiapkan kunjungan
+          Anda sebelum datang ke RSHD.
+        </p>
+        <a class="ro-btn ro-btn-primary ro-btn-compact"
+           href="{{ url_for('poliklinik') }}">
+          Lihat Poliklinik <b>→</b>
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- INFORMATION -->
+<section class="ro-section ro-info-section">
+  <div class="container ro-info-grid">
+    <div>
+      <span class="ro-overline">INFORMASI PENTING</span>
+      <h2>Siapkan kunjungan Anda</h2>
+      <p class="ro-info-lead">
+        Pastikan Anda mengetahui informasi pelayanan sebelum datang,
+        sehingga proses kunjungan dapat berjalan lebih nyaman.
+      </p>
 
-
-<!-- =====================================================
-     ALUR
-====================================================== -->
-
-<section
-    class="section section-light"
-    id="alur"
->
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <div class="section-label">
-                ALUR PELAYANAN
-            </div>
-
-            <h2>
-                Alur Rawat Jalan
-            </h2>
-
-            <p>
-                Ikuti tahapan pelayanan berikut
-                untuk mendapatkan layanan rawat jalan.
-            </p>
-
-        </div>
-
-
-        <div class="steps">
-
-            <div class="step">
-
-                <div class="step-number">
-                    01
-                </div>
-
-                <div>
-                    <h3>
-                        Pendaftaran
-                    </h3>
-
-                    <p>
-                        Lakukan pendaftaran
-                        sesuai ketentuan pelayanan.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="step">
-
-                <div class="step-number">
-                    02
-                </div>
-
-                <div>
-                    <h3>
-                        Verifikasi
-                    </h3>
-
-                    <p>
-                        Petugas melakukan verifikasi
-                        data pasien.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="step">
-
-                <div class="step-number">
-                    03
-                </div>
-
-                <div>
-                    <h3>
-                        Pemeriksaan
-                    </h3>
-
-                    <p>
-                        Pasien mendapatkan pelayanan
-                        dari dokter atau tenaga kesehatan.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="step">
-
-                <div class="step-number">
-                    04
-                </div>
-
-                <div>
-                    <h3>
-                        Selesai
-                    </h3>
-
-                    <p>
-                        Pasien menyelesaikan proses
-                        pelayanan sesuai kebutuhan.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-
+      <a class="ro-text-link" href="{{ url_for('informasi') }}">
+        Buka informasi rawat jalan <span>→</span>
+      </a>
     </div>
 
+    <div class="ro-info-cards">
+      <div class="ro-info-item">
+        <span>01</span>
+        <div>
+          <strong>Pendaftaran</strong>
+          <p>Gunakan akses pendaftaran yang tersedia.</p>
+        </div>
+      </div>
+
+      <div class="ro-info-item">
+        <span>02</span>
+        <div>
+          <strong>Jadwal Dokter</strong>
+          <p>Periksa jadwal sebelum memilih waktu kunjungan.</p>
+        </div>
+      </div>
+
+      <div class="ro-info-item">
+        <span>03</span>
+        <div>
+          <strong>Poliklinik</strong>
+          <p>Pastikan poli yang dituju sesuai kebutuhan Anda.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-
-
-<!-- =====================================================
-     DAFTAR ONLINE
-====================================================== -->
-
-<section
-    class="section"
-    id="daftar"
->
-
-    <div class="container">
-
-        <div class="register-box">
-
-            <div>
-
-                <div class="section-label white-label">
-                    PENDAFTARAN
-                </div>
-
-                <h2>
-                    Siap mendapatkan pelayanan?
-                </h2>
-
-                <p>
-                    Gunakan layanan pendaftaran online
-                    untuk mempermudah proses kunjungan Anda.
-                </p>
-
-            </div>
-
-
-            <a href="#" class="button-white">
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-                Daftar Online
-
-            </a>
-
-        </div>
-
+<!-- CTA -->
+<section class="ro-cta-section">
+  <div class="container ro-cta">
+    <div>
+      <span class="ro-overline ro-overline-light">INSTALASI RAWAT JALAN RSHD</span>
+      <h2>Siap memulai kunjungan Anda?</h2>
+      <p>
+        Akses layanan rawat jalan dengan lebih mudah dari satu tempat.
+      </p>
     </div>
 
-</section>
-
-
-
-<!-- =====================================================
-     KONTAK
-====================================================== -->
-
-<section
-    class="section section-light"
-    id="kontak"
->
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <div class="section-label">
-                KONTAK
-            </div>
-
-            <h2>
-                Informasi Rumah Sakit
-            </h2>
-
-        </div>
-
-
-        <div class="contact-grid">
-
-            <div class="contact-card">
-
-                <div class="contact-card-icon">
-                    <i class="fa-solid fa-location-dot"></i>
-                </div>
-
-                <div>
-
-                    <h3>
-                        Lokasi
-                    </h3>
-
-                    <p>
-                        RSUD H. Damanhuri Barabai
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="contact-card">
-
-                <div class="contact-card-icon">
-                    <i class="fa-solid fa-phone"></i>
-                </div>
-
-                <div>
-
-                    <h3>
-                        Telepon
-                    </h3>
-
-                    <p>
-                        Informasi Rawat Jalan
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="contact-card">
-
-                <div class="contact-card-icon">
-                    <i class="fa-solid fa-clock"></i>
-                </div>
-
-                <div>
-
-                    <h3>
-                        Jam Pelayanan
-                    </h3>
-
-                    <p>
-                        Senin - Sabtu
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
+    <div class="ro-cta-actions">
+      <a class="ro-btn ro-btn-white" href="{{ url_for('daftar_online') }}">
+        Daftar Online <b>→</b>
+      </a>
+      <a class="ro-btn ro-btn-ghost"
+         href="https://simrs.rshdbarabai.com/anjungan/jadwaldokterpoli"
+         target="_blank"
+         rel="noopener noreferrer">
+        Jadwal Dokter
+      </a>
     </div>
-
+  </div>
 </section>
 
 {% endblock %}
