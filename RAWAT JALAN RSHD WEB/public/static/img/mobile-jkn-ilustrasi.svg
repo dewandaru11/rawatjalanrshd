@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="1100" viewBox="0 0 700 1100">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b7d72"/>
+      <stop offset="100%" stop-color="#16a085"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-opacity=".22"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="1100" fill="#f4f8f7"/>
+
+  <!-- Phone -->
+  <rect x="105" y="35" width="490" height="1030" rx="48"
+        fill="#202124" filter="url(#shadow)"/>
+
+  <!-- Screen -->
+  <rect x="125" y="55" width="450" height="990" rx="35" fill="#ffffff"/>
+
+  <!-- Status -->
+  <text x="155" y="92" font-family="Arial" font-size="18"
+        fill="#555">09:41</text>
+  <circle cx="525" cy="87" r="6" fill="#555"/>
+  <rect x="540" y="80" width="22" height="12" rx="3" fill="#555"/>
+
+  <!-- Header -->
+  <rect x="125" y="115" width="450" height="150" fill="url(#bg)"/>
+
+  <circle cx="175" cy="165" r="30" fill="#ffffff"/>
+  <text x="175" y="174" text-anchor="middle"
+        font-family="Arial" font-size="22" font-weight="bold"
+        fill="#0b7d72">JKN</text>
+
+  <text x="220" y="160" font-family="Arial"
+        font-size="25" font-weight="bold" fill="#ffffff">
+        Mobile JKN
+  </text>
+
+  <text x="220" y="190" font-family="Arial"
+        font-size="15" fill="#e8fffb">
+        Layanan Kesehatan Digital
+  </text>
+
+  <!-- Title -->
+  <text x="160" y="315" font-family="Arial"
+        font-size="23" font-weight="bold" fill="#222">
+        Pendaftaran Pelayanan
+  </text>
+
+  <text x="160" y="345" font-family="Arial"
+        font-size="15" fill="#777">
+        Pilih fasilitas kesehatan dan poli
+  </text>
+
+  <!-- Card -->
+  <rect x="150" y="375" width="400" height="125"
+        rx="18" fill="#f1f8f6"/>
+
+  <circle cx="195" cy="420" r="28" fill="#0b7d72"/>
+  <text x="195" y="428" text-anchor="middle"
+        font-family="Arial" font-size="22" fill="#fff">+</text>
+
+  <text x="240" y="415" font-family="Arial"
+        font-size="18" font-weight="bold" fill="#222">
+        Pendaftaran Pelayanan
+  </text>
+
+  <text x="240" y="443" font-family="Arial"
+        font-size="14" fill="#666">
+        Pilih rumah sakit tujuan
+  </text>
+
+  <text x="240" y="466" font-family="Arial"
+        font-size="14" fill="#666">
+        dan layanan yang tersedia
+  </text>
+
+  <!-- Hospital -->
+  <text x="160" y="550" font-family="Arial"
+        font-size="15" fill="#777">
+        Fasilitas Kesehatan
+  </text>
+
+  <rect x="150" y="570" width="400" height="70"
+        rx="12" fill="#fff" stroke="#dce8e5"/>
+
+  <text x="175" y="600" font-family="Arial"
+        font-size="16" font-weight="bold" fill="#222">
+        RSUD H. Damanhuri Barabai
+  </text>
+
+  <text x="175" y="624" font-family="Arial"
+        font-size="13" fill="#777">
+        Rumah Sakit
+  </text>
+
+  <!-- Poli -->
+  <text x="160" y="680" font-family="Arial"
+        font-size="15" fill="#777">
+        Poli Tujuan
+  </text>
+
+  <rect x="150" y="700" width="400" height="70"
+        rx="12" fill="#fff" stroke="#dce8e5"/>
+
+  <text x="175" y="730" font-family="Arial"
+        font-size="16" font-weight="bold" fill="#222">
+        Pilih Poliklinik
+  </text>
+
+  <text x="175" y="754" font-family="Arial"
+        font-size="13" fill="#777">
+        Sesuai layanan yang tersedia
+  </text>
+
+  <!-- Button -->
+  <rect x="150" y="815" width="400" height="62"
+        rx="15" fill="#0b7d72"/>
+
+  <text x="350" y="854" text-anchor="middle"
+        font-family="Arial" font-size="18"
+        font-weight="bold" fill="#ffffff">
+        LANJUTKAN
+  </text>
+
+  <!-- Footer -->
+  <text x="350" y="935" text-anchor="middle"
+        font-family="Arial" font-size="14"
+        fill="#888">
+        Ilustrasi tampilan Mobile JKN
+  </text>
+
+  <text x="350" y="965" text-anchor="middle"
+        font-family="Arial" font-size="12"
+        fill="#aaa">
+        Bukan screenshot resmi aplikasi
+  </text>
+
+  <!-- Home indicator -->
+  <rect x="285" y="1015" width="130" height="6"
+        rx="3" fill="#333"/>
+</svg>

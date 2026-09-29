@@ -19,9 +19,9 @@
     >
 
     <title>
-        {% block title %}
+        
         Rawat Jalan - RSUD H. Damanhuri Barabai
-        {% endblock %}
+        
     </title>
 
     <!-- Google Font -->
@@ -42,11 +42,11 @@
     <!-- CSS -->
     <link
         rel="stylesheet"
-        href="{{ url_for('static', filename='css/style.css') }}"
+        href="/static/css/style.css"
     >
 
-    {% block head %}{% endblock %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/fix.css') }}">
+    
+    <link rel="stylesheet" href="/static/css/fix.css">
 
 <style>
 /* =========================================================
@@ -515,7 +515,7 @@
 
                 <div class="brand-logo">
                     <img
-                        src="{{ url_for('static', filename='img/logo-rshd-cropped.png') }}"
+                        src="/static/img/logo-rshd-cropped.png"
                         alt="Logo RSUD H. Damanhuri Barabai"
                     >
                 </div>
@@ -632,7 +632,264 @@
 
     <main>
 
-        {% block content %}{% endblock %}
+        
+
+<section class="page-banner">
+  <div class="container">
+    <p class="eyebrow">POLIKLINIK</p>
+    <h1>Layanan Poliklinik</h1>
+    <p>
+      Informasi layanan poliklinik dan jadwal dokter RSUD H. Damanhuri Barabai.
+    </p>
+  </div>
+</section>
+
+<section class="container content-section poli-services">
+
+  <div class="poli-section-head">
+    <div>
+      <p class="eyebrow">LAYANAN RAWAT JALAN</p>
+
+      <h2>Daftar Layanan Poliklinik</h2>
+
+      <p>
+        Pilih layanan poliklinik yang Anda butuhkan.
+        Jadwal dokter dan pelayanan dapat berubah sesuai tanggal pelayanan.
+      </p>
+    </div>
+
+    <div class="poli-jadwal-actions">
+
+      <a
+        class="btn btn-primary"
+        href="https://www.simpatik.site/jadwal_poli_publik"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fa-solid fa-calendar-days"></i>
+        Jadwal Poliklinik
+      </a>
+
+      <a
+        class="btn btn-secondary"
+        href="https://simrs.rshdbarabai.com/anjungan/jadwaldokterpoli"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fa-solid fa-calendar-day"></i>
+        Jadwal Poli Klinik Hari Ini
+      </a>
+
+    </div>
+  </div>
+
+
+  <!-- =========================================
+       DAFTAR LAYANAN POLIKLINIK
+       ========================================= -->
+
+  <div class="poli-grid">
+
+    <a
+      class="poli-card"
+      href="https://www.simpatik.site/jadwal_poli_publik"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="poli-icon">🧠</span>
+      <span>Poliklinik Bedah Saraf</span>
+    </div>
+
+
+    <a
+      class="poli-card"
+      href="https://www.simpatik.site/jadwal_poli_publik"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="poli-icon">❤️</span>
+      <span>Jantung dan Pembuluh Darah</span>
+    </div>
+
+
+    <a
+      class="poli-card"
+      href="https://www.simpatik.site/jadwal_poli_publik"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="poli-icon">🦴</span>
+      <span>Poli Orthopedi</span>
+    </div>
+
+
+    <a
+      class="poli-card"
+      href="https://www.simpatik.site/jadwal_poli_publik"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="poli-icon">🫁</span>
+      <span>Poli Paru</span>
+    </div>
+
+
+    <a
+      class="poli-card"
+      href="https://www.simpatik.site/jadwal_poli_publik"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="poli-icon">👶</span>
+      <span>Poli Anak</span>
+    </div>
+
+
+    <a
+      class="poli-card"
+      href="https://www.simpatik.site/jadwal_poli_publik"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="poli-icon">🩺</span>
+      <span>Poli Bedah</span>
+    </div>
+
+
+    <a
+      class="poli-card"
+      href="https://www.simpatik.site/jadwal_poli_publik"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="poli-icon">🧠</span>
+      <span>Poli Jiwa</span>
+    </div>
+
+
+    <a
+      class="poli-card"
+      href="https://www.simpatik.site/jadwal_poli_publik"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="poli-icon">👁️</span>
+      <span>Poli Mata</span>
+    </div>
+
+
+    <a
+      class="poli-card"
+      href="https://www.simpatik.site/jadwal_poli_publik"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="poli-icon">🤰</span>
+      <span>Poli Obsgyn / Kandungan</span>
+    </div>
+
+
+    <a
+      class="poli-card"
+      href="https://www.simpatik.site/jadwal_poli_publik"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="poli-icon">🩺</span>
+      <span>Poli Penyakit Dalam</span>
+    </div>
+
+
+    <a
+      class="poli-card"
+      href="https://www.simpatik.site/jadwal_poli_publik"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="poli-icon">💬</span>
+      <span>Poli Psikologi</span>
+    </div>
+
+
+    <a
+      class="poli-card"
+      href="https://www.simpatik.site/jadwal_poli_publik"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="poli-icon">🦿</span>
+      <span>Poli Rehab Medik / Fisioterapi</span>
+    </div>
+
+
+    <a
+      class="poli-card"
+      href="https://www.simpatik.site/jadwal_poli_publik"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="poli-icon">🩺</span>
+      <span>Poli Bedah Digestif</span>
+    </div>
+
+
+    <a
+      class="poli-card"
+      href="https://www.simpatik.site/jadwal_poli_publik"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="poli-icon">🧠</span>
+      <span>Poli Saraf</span>
+    </div>
+
+  </div>
+
+
+  <!-- =========================================
+       INFORMASI JADWAL
+       ========================================= -->
+
+  <div class="poli-info-box">
+
+    <strong>Informasi Jadwal Poliklinik</strong>
+
+    <p>
+      Untuk melihat jadwal poliklinik dan dokter berdasarkan tanggal,
+      gunakan halaman resmi SIMPATIK.
+      Untuk melihat jadwal poli klinik hari ini,
+      gunakan halaman jadwal dokter poli RSUD H. Damanhuri Barabai.
+    </p>
+
+    <div class="poli-info-actions">
+
+      <a
+        class="btn btn-primary"
+        href="https://www.simpatik.site/jadwal_poli_publik"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fa-solid fa-calendar-days"></i>
+        Lihat Jadwal Poliklinik di SIMPATIK →
+      </a>
+
+      <a
+        class="btn btn-secondary"
+        href="https://simrs.rshdbarabai.com/anjungan/jadwaldokterpoli"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fa-solid fa-calendar-day"></i>
+        Jadwal Poli Klinik Hari Ini
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
 
     </main>
 
@@ -894,7 +1151,7 @@
                         <div class="footer-logo">
 
                             <img
-                                src="{{ url_for('static', filename='img/logo-rshd-cropped.png') }}"
+                                src="/static/img/logo-rshd-cropped.png"
                                 alt="Logo RSUD H. Damanhuri Barabai"
                             >
 
@@ -997,10 +1254,10 @@
     <!-- JAVASCRIPT -->
 
     <script
-        src="{{ url_for('static', filename='js/app.js') }}"
+        src="/static/js/app.js"
     ></script>
 
-    {% block scripts %}{% endblock %}
+    
 
 
 <script>

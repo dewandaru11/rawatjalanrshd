@@ -1,0 +1,6 @@
+.firebase/
+__pycache__/
+*.backup
+*.backup-*
+firebase-debug.log
+public.backup/

@@ -19,9 +19,9 @@
     >
 
     <title>
-        {% block title %}
+        
         Rawat Jalan - RSUD H. Damanhuri Barabai
-        {% endblock %}
+        
     </title>
 
     <!-- Google Font -->
@@ -42,11 +42,11 @@
     <!-- CSS -->
     <link
         rel="stylesheet"
-        href="{{ url_for('static', filename='css/style.css') }}"
+        href="/static/css/style.css"
     >
 
-    {% block head %}{% endblock %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/fix.css') }}">
+    
+    <link rel="stylesheet" href="/static/css/fix.css">
 
 <style>
 /* =========================================================
@@ -515,7 +515,7 @@
 
                 <div class="brand-logo">
                     <img
-                        src="{{ url_for('static', filename='img/logo-rshd-cropped.png') }}"
+                        src="/static/img/logo-rshd-cropped.png"
                         alt="Logo RSUD H. Damanhuri Barabai"
                     >
                 </div>
@@ -632,7 +632,19 @@
 
     <main>
 
-        {% block content %}{% endblock %}
+        
+<section class="page-banner"><div class="container"><p class="eyebrow">Panduan Pasien</p><h1>Alur Pelayanan Rawat Jalan</h1><p>Gambaran umum proses kunjungan pasien.</p></div></section>
+<section class="container content-section">
+  <div class="steps">
+    <article><span>01</span><h2>Pendaftaran</h2><p>Siapkan identitas, kartu berobat, dan dokumen penjamin/rujukan jika diperlukan.</p></article>
+    <article><span>02</span><h2>Verifikasi</h2><p>Petugas memeriksa data dan persyaratan administrasi pasien.</p></article>
+    <article><span>03</span><h2>Menuju Poliklinik</h2><p>Ikuti petunjuk petugas menuju poli dan tunggu panggilan antrean.</p></article>
+    <article><span>04</span><h2>Pemeriksaan Dokter</h2><p>Dokter melakukan pemeriksaan dan menentukan rencana pelayanan.</p></article>
+    <article><span>05</span><h2>Farmasi / Penunjang</h2><p>Jika mendapat resep atau pemeriksaan penunjang, ikuti instruksi petugas.</p></article>
+  </div>
+  <p class="note">Alur dapat berbeda sesuai jenis layanan, kondisi pasien, dan kebijakan rumah sakit.</p>
+</section>
+
 
     </main>
 
@@ -894,7 +906,7 @@
                         <div class="footer-logo">
 
                             <img
-                                src="{{ url_for('static', filename='img/logo-rshd-cropped.png') }}"
+                                src="/static/img/logo-rshd-cropped.png"
                                 alt="Logo RSUD H. Damanhuri Barabai"
                             >
 
@@ -997,10 +1009,10 @@
     <!-- JAVASCRIPT -->
 
     <script
-        src="{{ url_for('static', filename='js/app.js') }}"
+        src="/static/js/app.js"
     ></script>
 
-    {% block scripts %}{% endblock %}
+    
 
 
 <script>

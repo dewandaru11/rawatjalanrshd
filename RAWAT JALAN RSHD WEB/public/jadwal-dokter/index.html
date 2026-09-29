@@ -19,9 +19,9 @@
     >
 
     <title>
-        {% block title %}
+        
         Rawat Jalan - RSUD H. Damanhuri Barabai
-        {% endblock %}
+        
     </title>
 
     <!-- Google Font -->
@@ -42,11 +42,11 @@
     <!-- CSS -->
     <link
         rel="stylesheet"
-        href="{{ url_for('static', filename='css/style.css') }}"
+        href="/static/css/style.css"
     >
 
-    {% block head %}{% endblock %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/fix.css') }}">
+    
+    <link rel="stylesheet" href="/static/css/fix.css">
 
 <style>
 /* =========================================================
@@ -515,7 +515,7 @@
 
                 <div class="brand-logo">
                     <img
-                        src="{{ url_for('static', filename='img/logo-rshd-cropped.png') }}"
+                        src="/static/img/logo-rshd-cropped.png"
                         alt="Logo RSUD H. Damanhuri Barabai"
                     >
                 </div>
@@ -632,7 +632,15 @@
 
     <main>
 
-        {% block content %}{% endblock %}
+        
+<section class="page-banner"><div class="container"><p class="eyebrow">Rencanakan Kunjungan</p><h1>Jadwal Dokter</h1><p>Jadwal pada halaman ini masih data contoh dan harus diperbarui oleh admin.</p></div></section>
+<section class="container content-section">
+  <div class="search-row"><input id="filterInput" type="search" placeholder="Cari dokter atau poliklinik..." aria-label="Cari jadwal"></div>
+  <div class="table-wrap"><table id="dataTable"><thead><tr><th>Poliklinik</th><th>Nama Dokter</th><th>Hari dan Jam</th><th>Status</th></tr></thead><tbody>
+  <tr><td>Poli Penyakit Dalam</td><td>dr. Nama Dokter, Sp.PD</td><td>Senin–Jumat, 08.00–12.00</td><td><span class="status-pill">Perlu konfirmasi</span></td></tr><tr><td>Popy ppli Anak</td><td>dr. Nama Dokter, Sp.A</td><td>Senin–Kamis, 08.00–12.00</td><td><span class="status-pill">Perlu konfirmasi</span></td></tr><tr><td>Poli Bedah</td><td>dr. Nama Dokter, Sp.B</td><td>Senin, Rabu, Jumat, 08.00–12.00</td><td><span class="status-pill">Perlu konfirmasi</span></td></tr><tr><td>Poli Kebidanan &amp; Kandungan</td><td>dr. Nama Dokter, Sp.OG</td><td>Senin–Jumat, 08.00–12.00</td><td><span class="status-pill">Perlu konfirmasi</span></td></tr><tr><td>Poli Saraf</td><td>dr. Nama Dokter, Sp.N</td><td>Selasa dan Kamis, 08.00–12.00</td><td><span class="status-pill">Perlu konfirmasi</span></td></tr><tr><td>Poli Gigi</td><td>drg. Nama Dokter</td><td>Senin–Jumat, 08.00–12.00</td><td><span class="status-pill">Perlu konfirmasi</span></td></tr>
+  </tbody></table></div>
+</section>
+
 
     </main>
 
@@ -894,7 +902,7 @@
                         <div class="footer-logo">
 
                             <img
-                                src="{{ url_for('static', filename='img/logo-rshd-cropped.png') }}"
+                                src="/static/img/logo-rshd-cropped.png"
                                 alt="Logo RSUD H. Damanhuri Barabai"
                             >
 
@@ -997,10 +1005,10 @@
     <!-- JAVASCRIPT -->
 
     <script
-        src="{{ url_for('static', filename='js/app.js') }}"
+        src="/static/js/app.js"
     ></script>
 
-    {% block scripts %}{% endblock %}
+    
 
 
 <script>

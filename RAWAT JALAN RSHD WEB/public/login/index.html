@@ -19,9 +19,9 @@
     >
 
     <title>
-        {% block title %}
+        
         Rawat Jalan - RSUD H. Damanhuri Barabai
-        {% endblock %}
+        
     </title>
 
     <!-- Google Font -->
@@ -42,11 +42,11 @@
     <!-- CSS -->
     <link
         rel="stylesheet"
-        href="{{ url_for('static', filename='css/style.css') }}"
+        href="/static/css/style.css"
     >
 
-    {% block head %}{% endblock %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/fix.css') }}">
+    
+    <link rel="stylesheet" href="/static/css/fix.css">
 
 <style>
 /* =========================================================
@@ -515,7 +515,7 @@
 
                 <div class="brand-logo">
                     <img
-                        src="{{ url_for('static', filename='img/logo-rshd-cropped.png') }}"
+                        src="/static/img/logo-rshd-cropped.png"
                         alt="Logo RSUD H. Damanhuri Barabai"
                     >
                 </div>
@@ -632,7 +632,17 @@
 
     <main>
 
-        {% block content %}{% endblock %}
+        
+<section class="page-banner"><div class="container"><p class="eyebrow">Area Pengelola</p><h1>Login Admin</h1><p>Halaman rancangan untuk pengelola website.</p></div></section>
+<section class="container content-section form-section">
+  <div class="warning-box">Autentikasi belum diaktifkan. Jangan gunakan untuk akun atau kata sandi sungguhan.</div>
+  <form class="form-card" onsubmit="event.preventDefault(); alert('Login belum diaktifkan.');">
+    <label>Nama pengguna<input name="username" autocomplete="username" required></label>
+    <label>Kata sandi<input name="password" type="password" autocomplete="current-password" required></label>
+    <button class="btn btn-primary" type="submit">Login (belum aktif)</button>
+  </form>
+</section>
+
 
     </main>
 
@@ -894,7 +904,7 @@
                         <div class="footer-logo">
 
                             <img
-                                src="{{ url_for('static', filename='img/logo-rshd-cropped.png') }}"
+                                src="/static/img/logo-rshd-cropped.png"
                                 alt="Logo RSUD H. Damanhuri Barabai"
                             >
 
@@ -997,10 +1007,10 @@
     <!-- JAVASCRIPT -->
 
     <script
-        src="{{ url_for('static', filename='js/app.js') }}"
+        src="/static/js/app.js"
     ></script>
 
-    {% block scripts %}{% endblock %}
+    
 
 
 <script>

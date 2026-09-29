@@ -19,9 +19,9 @@
     >
 
     <title>
-        {% block title %}
+        
         Rawat Jalan - RSUD H. Damanhuri Barabai
-        {% endblock %}
+        
     </title>
 
     <!-- Google Font -->
@@ -42,11 +42,11 @@
     <!-- CSS -->
     <link
         rel="stylesheet"
-        href="{{ url_for('static', filename='css/style.css') }}"
+        href="/static/css/style.css"
     >
 
-    {% block head %}{% endblock %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/fix.css') }}">
+    
+    <link rel="stylesheet" href="/static/css/fix.css">
 
 <style>
 /* =========================================================
@@ -515,7 +515,7 @@
 
                 <div class="brand-logo">
                     <img
-                        src="{{ url_for('static', filename='img/logo-rshd-cropped.png') }}"
+                        src="/static/img/logo-rshd-cropped.png"
                         alt="Logo RSUD H. Damanhuri Barabai"
                     >
                 </div>
@@ -632,7 +632,21 @@
 
     <main>
 
-        {% block content %}{% endblock %}
+        
+<section class="page-banner"><div class="container"><p class="eyebrow">Pendaftaran</p><h1>Daftar Online Rawat Jalan</h1><p>Form demo untuk rancangan antarmuka. Belum menjadi pendaftaran resmi.</p></div></section>
+<section class="container content-section form-section">
+  <div class="warning-box"><b>Perhatian:</b> Jangan masukkan NIK atau data medis asli pada versi demo ini. Form belum terhubung ke database rumah sakit dan belum menerbitkan nomor antrean.</div>
+  <form class="form-card" onsubmit="event.preventDefault(); alert('Form ini masih DEMO dan belum terhubung ke database.');">
+    <label>Nama lengkap *<input name="nama" required maxlength="120" autocomplete="name"></label>
+    <label>NIK (demo; jangan isi data asli) *<input name="nik" required inputmode="numeric" pattern="[0-9]{16}" maxlength="16" placeholder="16 digit"></label>
+    <label>Nomor telepon *<input name="telepon" required type="tel" autocomplete="tel"></label>
+    <label>Nomor rekam medis (jika ada)<input name="no_rm" maxlength="30"></label>
+    <label>Poliklinik tujuan *<select name="poli" required><option value="">Pilih poliklinik</option><option>Poli Penyakit Dalam</option><option>Popy ppli Anak</option><option>Poli Bedah</option><option>Poli Kebidanan &amp; Kandungan</option><option>Poli Saraf</option><option>Poli Gigi</option></select></label>
+    <label>Tanggal rencana kunjungan *<input name="tanggal" type="date" min="" required></label>
+    <button class="btn btn-primary" type="submit">Kirim Form Demo</button>
+  </form>
+</section>
+
 
     </main>
 
@@ -894,7 +908,7 @@
                         <div class="footer-logo">
 
                             <img
-                                src="{{ url_for('static', filename='img/logo-rshd-cropped.png') }}"
+                                src="/static/img/logo-rshd-cropped.png"
                                 alt="Logo RSUD H. Damanhuri Barabai"
                             >
 
@@ -997,10 +1011,10 @@
     <!-- JAVASCRIPT -->
 
     <script
-        src="{{ url_for('static', filename='js/app.js') }}"
+        src="/static/js/app.js"
     ></script>
 
-    {% block scripts %}{% endblock %}
+    
 
 
 <script>

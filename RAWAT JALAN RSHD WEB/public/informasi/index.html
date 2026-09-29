@@ -19,9 +19,9 @@
     >
 
     <title>
-        {% block title %}
+        
         Rawat Jalan - RSUD H. Damanhuri Barabai
-        {% endblock %}
+        
     </title>
 
     <!-- Google Font -->
@@ -42,11 +42,11 @@
     <!-- CSS -->
     <link
         rel="stylesheet"
-        href="{{ url_for('static', filename='css/style.css') }}"
+        href="/static/css/style.css"
     >
 
-    {% block head %}{% endblock %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/fix.css') }}">
+    
+    <link rel="stylesheet" href="/static/css/fix.css">
 
 <style>
 /* =========================================================
@@ -515,7 +515,7 @@
 
                 <div class="brand-logo">
                     <img
-                        src="{{ url_for('static', filename='img/logo-rshd-cropped.png') }}"
+                        src="/static/img/logo-rshd-cropped.png"
                         alt="Logo RSUD H. Damanhuri Barabai"
                     >
                 </div>
@@ -632,7 +632,14 @@
 
     <main>
 
-        {% block content %}{% endblock %}
+        
+<section class="page-banner"><div class="container"><p class="eyebrow">RSHD Barabai</p><h1>Informasi Pelayanan</h1><p>Informasi umum layanan rawat jalan rumah sakit.</p></div></section>
+<section class="container content-section">
+  <div class="info-panel"><h2>Jam Pelayanan Rawat Jalan</h2><p>Silakan konfirmasi jam pelayanan terbaru melalui kanal resmi rumah sakit sebelum berkunjung.</p></div>
+  <div class="info-panel"><h2>Persiapan Sebelum Berobat</h2><ul><li>Siapkan kartu identitas dan kartu berobat/rekam medis jika sudah pernah berkunjung.</li><li>Siapkan kartu jaminan atau dokumen rujukan apabila diperlukan.</li><li>Datang sesuai jadwal dan ikuti arahan petugas.</li><li>Bawa daftar obat yang sedang dikonsumsi dan informasi alergi obat.</li></ul></div>
+  <div class="info-panel"><h2>Informasi Penting</h2><p>Website ini merupakan kerangka awal. Informasi operasional, persyaratan, dan jam layanan harus diperiksa dan disahkan oleh pihak RSUD.</p></div>
+</section>
+
 
     </main>
 
@@ -894,7 +901,7 @@
                         <div class="footer-logo">
 
                             <img
-                                src="{{ url_for('static', filename='img/logo-rshd-cropped.png') }}"
+                                src="/static/img/logo-rshd-cropped.png"
                                 alt="Logo RSUD H. Damanhuri Barabai"
                             >
 
@@ -997,10 +1004,10 @@
     <!-- JAVASCRIPT -->
 
     <script
-        src="{{ url_for('static', filename='js/app.js') }}"
+        src="/static/js/app.js"
     ></script>
 
-    {% block scripts %}{% endblock %}
+    
 
 
 <script>
